@@ -2,7 +2,7 @@ import tkinter as tk
 import pyautogui as pag
 import pyocr
 from PIL import ImageEnhance
-from config import TESSDATA_PATH, TESSERACT_PATH
+from .config import TESSDATA_PATH, TESSERACT_PATH
 import os
 
 class MainCanvas(tk.Canvas):
@@ -50,3 +50,6 @@ def analyseImage():
 def getImageText():
 	MainWindow().mainloop()
 	return analyseImage()
+
+if __name__ == '__main__':
+	pass
