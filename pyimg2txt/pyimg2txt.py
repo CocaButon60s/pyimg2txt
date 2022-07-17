@@ -2,7 +2,7 @@ import tkinter as tk
 import pyautogui as pag
 import pyocr
 from PIL import ImageEnhance
-from config import TESSDATA_PATH, TESSERACT_PATH, PNG_PATH
+from config import TESSDATA_PATH, TESSERACT_PATH
 import os
 
 class MainCanvas(tk.Canvas):
@@ -45,7 +45,6 @@ def analyseImage():
 	os.environ['PATH'] += os.pathsep + TESSERACT_PATH
 	os.environ['TESSDATA_PREFIX'] = TESSDATA_PATH
 	image = ImageEnhance.Contrast(crop_image.convert('L')).enhance(2.0)
-	image.save(PNG_PATH)
 	return pyocr.get_available_tools()[0].image_to_string(image,lang='jpn')
 
 def getImageText():
