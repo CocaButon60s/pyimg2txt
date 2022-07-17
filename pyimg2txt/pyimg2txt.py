@@ -50,6 +50,3 @@ def analyseImage():
 def getImageText():
 	MainWindow().mainloop()
 	return analyseImage()
-
-if __name__ == '__main__':
-	pass
